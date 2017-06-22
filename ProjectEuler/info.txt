@@ -1,0 +1,1 @@
+Code from site Project Euler. Not optimized at all. So, don't bother

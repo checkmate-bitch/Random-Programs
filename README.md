@@ -1,2 +1,2 @@
 # Random-Programs
-warehouse of random programs, competitive program codes, source, cool artilces etc
+Warehouse of random programs, competitive programming codes, cool articles, random CS info

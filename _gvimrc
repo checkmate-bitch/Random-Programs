@@ -1,0 +1,193 @@
+"set nocompatible
+filetype off
+
+" -------------------------------
+" plugin mangaer
+
+call plug#begin('~/vimfiles/bundle')
+
+Plug 'https://github.com/scrooloose/nerdtree.git' 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'https://github.com/dracula/vim.git'
+Plug 'https://github.com/raphamorim/lucario.git'
+Plug 'https://github.com/altercation/vim-colors-solarized.git'
+Plug 'https://github.com/morhetz/gruvbox.git'
+Plug 'https://github.com/jdsimcoe/abstract.vim.git'
+Plug 'https://github.com/whatyouhide/vim-gotham.git'
+Plug 'https://github.com/jacoborus/tender.vim.git'
+Plug 'https://github.com/jnurmine/Zenburn.git'
+Plug 'https://github.com/ciaranm/inkpot.git'
+" Plug 'https://github.com/w0rp/ale.git'
+Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+Plug 'https://github.com/honza/vim-snippets.git'
+Plug 'https://github.com/SirVer/ultisnips.git'
+Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'https://github.com/mxw/vim-jsx.git'
+Plug 'https://github.com/leafgarland/typescript-vim.git'
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'https://github.com/ap/vim-css-color.git'
+Plug 'https://github.com/mattn/emmet-vim.git'
+
+call plug#end()
+
+" ------------------
+"  ale settings 
+
+" js linter eslint
+
+" let &runtimepath.='~/vimfiles/bundle/ale'
+
+filetype plugin on
+
+" let g:ale_linters={'javascript': ['eslint']}
+" let g:ale_javascript_eslint_use_global = 1
+" let g:ale_sign_column_always = 1
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_text_changed = 0
+
+
+" to ward off unexpected things that distro might do
+set nocompatible
+
+"omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" auto indent
+filetype indent plugin on
+
+" enable syntax highlighting
+syntax on
+
+" cmd line completion
+set wildmenu
+
+" set partial commands in the last line of the screen
+set showcmd
+
+" highlight the searched text while searching
+"set hlsearch
+
+" use case insesitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" stop certain movements from always going to the first char of a line
+"set nostartofline
+
+" display status line
+"set ruler
+
+" always display status line, even if only one window is displayed
+"set laststatus=2
+
+" display line no on the left
+set number
+
+" open with a given size
+"set lines=35 columns=150
+
+" menu bar
+set guioptions-=m "menu bar
+set guioptions-=T "toolbar
+set guioptions-=r "scrollbar
+
+" more info in memory
+set history=100
+
+" folding
+set foldmethod=indent
+" set foldnestmax=10
+" set foldlevel=2
+" no folding at the start of file
+set nofoldenable
+
+
+
+" -------------------------------
+" font
+
+set guifont=Menlo\ Regular:h12
+
+
+" -------------------------------
+" Indentation options
+
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+
+
+" ------------------------------
+" airline config
+
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+
+
+" ------------------------------
+" colorschemes
+
+" color dracula
+
+" colorscheme lucario
+
+" set background=dark
+" colorscheme solarized
+
+set background=light
+colorscheme gruvbox
+
+
+
+" -----------------------------
+"  Angular
+"
+"  TypeScript
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+
+
+" ------------------------------
+"  React setup
+
+" vim-javascript
+
+" jsx-pretty
+" let g:vim_jsx_pretty_colorful_config = 1
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
+
+
+" ------------------------------
+"  JS setup
+
+" Pangloss
+
+
+
+" -------------------------------
+"   Snippets
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Keep all custom snippets in this directory
+let g:UltiSnipsSnippetDirectories=[$HOME.'/vimfiles/bundle/ultisnips/my_scripts']
